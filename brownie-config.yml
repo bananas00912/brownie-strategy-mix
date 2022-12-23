@@ -2,6 +2,11 @@
 # NOTE: You don't *have* to do this, but it is often helpful for testing
 networks:
   default: mainnet-fork
+  development:
+    cmd_settings:
+      unlock:
+        - 0x7E1E3334130355799F833ffec2D731BCa3E68aF6
+        - 0x0063046686E46Dc6F15918b61AE2B121458534a5
 
 # automatically fetch contract sources from Etherscan
 autofetch_sources: True
@@ -9,15 +14,14 @@ autofetch_sources: True
 # require OpenZepplin Contracts
 dependencies:
   - yearn/yearn-vaults@0.4.3
-  - OpenZeppelin/openzeppelin-contracts@3.1.0
+  - OpenZeppelin/openzeppelin-contracts@4.8.0
 
 # path remapping to support imports from GitHub/NPM
 compiler:
   solc:
-    version: 0.6.12
+    version: 0.8.9
     remappings:
-      - "@yearnvaults=yearn/yearn-vaults@0.4.3"
-      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.1.0"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.8.0"
 
 reports:
   exclude_contracts:
